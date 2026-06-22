@@ -13,6 +13,8 @@ jobs:
     test:
       runs-on: ubuntu-latest
       steps:
+       - name: Check out repository
+       uses: actions/checkout@v4
        - name: Brief file info
          run: cat config/webserver.conf
        - name: Script test
