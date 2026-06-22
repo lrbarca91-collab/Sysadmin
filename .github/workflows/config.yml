@@ -18,4 +18,4 @@ jobs:
        - name: Brief file info
          run: cat config/webserver.conf
        - name: Script test
-         run: ./check-config.sh
+         run: ./scripts/check-config.sh
