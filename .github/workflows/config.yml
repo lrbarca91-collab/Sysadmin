@@ -1,1 +1,19 @@
+name: Webserver Script CI
 
+on:
+    push:
+      branches: 
+        - main
+    workflow_dispatch:
+    schedule:
+        - cron: '0 3 * * *'
+        - cron: '2 0 * * *'
+        
+jobs:
+    test:
+      runs-on: ubuntu-latest
+      steps:
+       - name: Brief file info
+         run: cat check-config.sh
+       - name: Script test
+         run: ./check-config.sh
