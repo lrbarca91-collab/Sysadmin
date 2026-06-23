@@ -1,0 +1,25 @@
+name: Sys Workflow Basics
+
+on:
+    push:
+      branches: 
+        - main
+    workflow_dispatch:
+    schedule:
+        - cron: '0 3 * * *'
+        - cron: '0 17 * * *'
+        
+jobs:
+    test:
+      runs-on: ubuntu-latest
+      steps:
+       - name: Check out repository
+         uses: actions/checkout@v4
+       - name: Date
+         run: date
+       - name: Display Kernel/System Info
+         run: uname -a
+       - name: Display working directory
+         run: pwd
+       - name: List Directory contents
+         run: ls -la
