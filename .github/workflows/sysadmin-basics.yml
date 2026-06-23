@@ -23,3 +23,10 @@ jobs:
          run: pwd
        - name: List Directory contents
          run: ls -la
+       - name: Report directory
+         run: mkdir reports
+       - name: System report
+         run: touch system-report.txt
+       - name: Data for report
+         run: history 6 | head -n 3 > system-report.txt
+       
