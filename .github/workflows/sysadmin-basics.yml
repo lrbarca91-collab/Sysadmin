@@ -45,6 +45,6 @@ jobs:
        - name: Data for runtime
          run: 
                |
-               ${{ env.APP_NAME }} > /{{ env.REPORT_DIR }}/runtime-info.txt
-               ${{ env.REGION }} > //{{ env.REPORT_DIR }}/runtime-info.txt
+               ${{ env.APP_NAME }} > /${{ env.REPORT_DIR }}/runtime-info.txt
+               ${{ env.REGION }} > //${{ env.REPORT_DIR }}/runtime-info.txt
        
