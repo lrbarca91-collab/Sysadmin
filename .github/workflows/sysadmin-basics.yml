@@ -43,6 +43,8 @@ jobs:
        - name: runtime info
          run: touch reports/runtime-info.txt
        - name: Data for runtime
-         run: ${{ env.APP_NAME }} > /{{ env.REPORT_DIR }}/runtime-info.txt
-         run: ${{ env.REGION }} > //{{ env.REPORT_DIR }}/runtime-info.txt
+         run: 
+               |
+               ${{ env.APP_NAME }} > /{{ env.REPORT_DIR }}/runtime-info.txt
+               ${{ env.REGION }} > //{{ env.REPORT_DIR }}/runtime-info.txt
        
