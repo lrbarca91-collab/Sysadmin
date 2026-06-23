@@ -47,4 +47,9 @@ jobs:
                |
                ${{ env.APP_NAME }} > /${{ env.REPORT_DIR }}/runtime-info.txt
                ${{ env.REGION }} > //${{ env.REPORT_DIR }}/runtime-info.txt
+       - name: Save System Report
+         uses: actions/upload-artifact@v4
+         with:
+           name: System-Runtime-Report # Name of downloadable zip file
+           path: reports/
        
