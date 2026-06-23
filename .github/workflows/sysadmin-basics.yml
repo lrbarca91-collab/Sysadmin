@@ -41,7 +41,7 @@ jobs:
               pwd >> ${{ env.REPORT_DIR }}/system-report.txt
               ls -la >> ${{ env.REPORT_DIR }}/system-report.txt
        - name: runtime info
-         run: touch reports/runtime-info.txt
+         run: touch runtime-info.txt
        - name: Data for runtime
          run: 
                |
