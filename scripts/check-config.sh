@@ -11,9 +11,16 @@
 
 set -euo pipefail
 
-# Path to the config file, relative to the repo root.
-# Allow overriding via first argument for flexibility/testing.
-CONFIG_FILE="${1:-config/webserver.conf}"
+# ─── THE FIX ──────────────────────────────────────────────────────────
+# 1. Get the absolute path of the directory where this script lives
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+
+# 2. Derive the repo root (one level up from the 'scripts' folder)
+REPO_ROOT="$(dirname "$SCRIPT_DIR")"
+
+# 3. Build the default path relative to the repo root, keeping the override option
+CONFIG_FILE="${1:-$REPO_ROOT/config/webserver.conf}"
+# ──────────────────────────────────────────────────────────────────────
 
 # Keywords that indicate the file looks like a real webserver config.
 # At least one of these must be present.
