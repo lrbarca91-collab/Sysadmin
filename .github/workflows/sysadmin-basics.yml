@@ -2,6 +2,8 @@ name: Sys Workflow Basics
 
 env:
     REPORT_DIR: "reports" # Global report variable
+    APP_NAME: "sysworkflow"
+    REGION: "Greenland"
 
 on:
     push:
@@ -38,4 +40,9 @@ jobs:
               uname -a >> ${{ env.REPORT_DIR }}/system-report.txt
               pwd >> ${{ env.REPORT_DIR }}/system-report.txt
               ls -la >> ${{ env.REPORT_DIR }}/system-report.txt
+       - name: runtime info
+         run: touch reports/runtime-info.txt
+       - name: Data for runtime
+         run: ${{ env.APP_NAME }} > /{{ env.REPORT_DIR }}/runtime-info.txt
+         run: ${{ env.REGION }} > //{{ env.REPORT_DIR }}/runtime-info.txt
        
