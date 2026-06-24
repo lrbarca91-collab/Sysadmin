@@ -30,5 +30,14 @@ Timed grep to display how long the request took along with the user and system C
 
 24 Jun 2026 12:16:10 GMT -- target= http://localhost:8080/ : none resonse time 0.016s
 
+Check the webserver CPU, MEM Usage in Docker stats:
+
+<img width="1072" height="257" alt="2026-06-24_14-32-40" src="https://github.com/user-attachments/assets/68d0c43d-e1c1-4f86-b95b-0f2416d50e6e" />
+
+docker exec -it caddy df -h /
+
+1% of the containers space is being used:
+
+<img width="1072" height="257" alt="2026-06-24_14-32-40" src="https://github.com/user-attachments/assets/74ea1f2c-e86e-416a-bf58-9ef803558d54" />
 
 
